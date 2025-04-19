@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tank Problem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Water Tank Problem</h1>
+        
+        <div class="problem-description">
+            <p>Given an array of non-negative integers representing heights of blocks, 
+               calculate how much water can be trapped between the blocks after rainfall.</p>
+        </div>
+        
+        <div class="input-section">
+            <p>Enter heights of blocks (comma-separated, e.g., 0,1,0,2,1,0,1,3,2,1,2,1):</p>
+            <input type="text" id="heightsInput" placeholder="e.g., 0,1,0,2,1,0,1,3,2,1,2,1">
+            <div class="button-container">
+                <button id="calculateBtn">Calculate Water</button>
+                <button id="randomBtn">Generate Random Heights</button>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <h2>Results:</h2>
+            <p>Total water trapped: <span id="waterResult">0</span> units</p>
+        </div>
+        
+        <div class="visual-container">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color block-color"></div>
+                    <span>Block</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color water-color"></div>
+                    <span>Water</span>
+                </div>
+            </div>
+            <div id="waterTankVisual" class="water-tank-visual"></div>
+            <div class="instruction">Hover over a column to see the water amount.</div>
+        </div>
+        
+        <div class="explanation">
+            <h3>How It Works:</h3>
+            <ol>
+                <li>For each position, we find the maximum height to its left and right.</li>
+                <li>The water trapped at any position is min(leftMax, rightMax) - height[i].</li>
+                <li>We sum up the water trapped at each position to get the total water units.</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
